@@ -18,7 +18,7 @@ This is a sample project to see how a MEAN application can be configured to work
 In order to start working in the backend, run the following command:
 ```
 $ cd backend
-(backend) $ docker build . -t backend:dev
+(backend) $ docker build -t backend:dev .
 ```
 
 To init this container run
@@ -34,7 +34,7 @@ Then you can check if the API is working by accessing to `http://localhost:3000/
 In order to start working in the frontend, run the following command:
 ```
 $ cd frontend
-(frontend) $ docker build . -t frontend:dev
+(frontend) $ docker build -t frontend:dev .
 ```
 
 To init this container run
