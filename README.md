@@ -29,7 +29,7 @@ This will build all the images and will run all the containers and you'll see th
 
 If you prefer build images first, then start/stop them, you can do the following:
 ```
-$ docker-compose -f docker-compose-develop.yml build
+$ docker-compose -f docker-compose-develop.yml create
 ```
 
 **Run all the containers on background:**
@@ -41,7 +41,7 @@ Check that API is working by accessing to http://localhost:3000/api
 
 **Stop all the containers:**
 ```
-$ docker-compose start
+$ docker-compose stop
 ```
 
 Or you can just install one image at a time
