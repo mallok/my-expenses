@@ -2,12 +2,13 @@
 In order to start working in the backend, run the following command:
 ```
 $ cd backend
-(backend) $ docker build -t backend:dev .
+(backend) $ docker build -f Dockerfile-develop -t backend:dev .
 ```
+For production use `Dockerfile` instead or just remove the option `-f Dockerfile-develop`
 
 To init this container and be able to modify the code and see changes in the container, run this
 ```
-$ docker run -d --name my-expenses-be -v $PWD/app:/home/nodejs/app -u nodejs -p 3000:3000 backend:dev
+$ docker run -d --name myexpenses_api -v $PWD/app:/home/nodejs/app -u nodejs -p 3000:3000 backend:dev
 ```
 
 **NOTE: Make sure to run the above command within backend folder.**

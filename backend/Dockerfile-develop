@@ -22,11 +22,11 @@ COPY app/package.json /home/nodejs/app
 # Install dependecies
 RUN npm install
 
-# Get all the code needed to run the app
-COPY app /home/nodejs/app
+# Add VOLUME for development share folder with host
+VOLUME  ["/home/nodejs/app"]
 
 # Expose the port the app runs in
 EXPOSE 3000
 
 # Serve the app
-CMD ["dumb-init", "npm", "start"]
+CMD ["dumb-init", "npm", "run-script", "watch"]

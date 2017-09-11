@@ -1,0 +1,20 @@
+version: '2.2'
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    links:
+      - db
+    ports:
+      - "80:80"
+    volumes:
+      - ./backend/app:/home/nodejs/app
+    environment:
+      NODE_ENV: development
+      MONGO_URL: mongodb://db:27017/my-expenses
+    user: nodejs
+  db:
+    image: mongo:latest
+    ports:
+     - "27017:27017"
