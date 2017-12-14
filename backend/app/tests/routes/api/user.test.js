@@ -39,7 +39,7 @@ describe('POST /api/user to create user', function () {
     request = supertest(app);
   });
 
-  it('should respond with a 201 as the user as been created successfully', function (done) {
+  it('should respond with a 201 as the user has been created successfully', function (done) {
     registerStub.resolves({});
 
     request
@@ -53,7 +53,7 @@ describe('POST /api/user to create user', function () {
       });
   });
 
-  it('should respond with a 400 as the user cannot be registered', function (done) {
+  it('should respond with a 400 as the user can not be registered', function (done) {
     registerStub.rejects('Error registration')
 
     request
