@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
+const api = require('./routes/api')
 mongoose.connect(process.env.MONGO_URL, { useMongoClient: true });
 
 const app = express();
@@ -25,7 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./utils/checkAccess'));
 
-app.use('/api', require('./routes/api'));
+//Load Routes
+api(app)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
